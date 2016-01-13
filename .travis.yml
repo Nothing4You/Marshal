@@ -2,9 +2,5 @@ language: csharp
 solution: MarshalUtil.sln
 mono:
 - latest
-- 3.2.8 # debian jessie
-- 2.10.8 # debian wheezy
-addons:
-    apt:
-        packages:
-        - nuget # not included in mono < 3.8.0 package
+- 4.2.1 # ubuntu xenial
+- 3.8.0 # oldest option on travis with nuget support
