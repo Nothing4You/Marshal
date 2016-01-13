@@ -1,0 +1,6 @@
+language: csharp
+solution: MarshalUtil.sln
+mono:
+- latest
+- 3.2.8 # debian jessie
+- 2.10.8 # debian wheezy
