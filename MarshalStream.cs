@@ -16,7 +16,7 @@ namespace MarshalUtil
 
         public MarshalStream(string dat)
         {
-            _dat = EvalString.ParseString(dat.Replace(@"\x", @"\x00")).ToHex();
+            _dat = dat.Replace(@"\x", @"\x00").Eval().ToHex();
         }
 
         public object GetValue()

@@ -6,8 +6,19 @@ namespace MarshalUtil
 {
     internal static class EvalString
     {
+        /// <summary>
+        /// Evaluates string to unescape escaped values by creating a temporary class and executing it<para/>
+        /// Use with care!
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string Eval(this string str)
+        {
+            return ParseString(str);
+        }
+
         // Based on http://stackoverflow.com/a/3298747
-        public static string ParseString(string txt)
+        private static string ParseString(string txt)
         {
             CSharpCodeProvider provider = new CSharpCodeProvider();
             CompilerParameters prms = new CompilerParameters
