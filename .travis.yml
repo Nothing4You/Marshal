@@ -4,3 +4,6 @@ mono:
 - latest
 - 4.2.1 # ubuntu xenial
 - 4.0.0
+script:
+- xbuild /p:Configuration=Release MarshalUtil.sln
+- mono ./packages/xunit.runner.console.*/tools/xunit.console.exe ./MarshalUtil.Test/bin/Release/MarshalUtil.Test.dll

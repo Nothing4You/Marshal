@@ -28,8 +28,10 @@ namespace MarshalUtil
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach (string hex in from int charCode in str select Convert.ToString(charCode, 16) into hex select hex.PadLeft(2, '0'))
+            foreach (int charCode in str)
             {
+                string hex1 = Convert.ToString(charCode, 16);
+                string hex = hex1.PadLeft(2, '0');
                 sb.Append(hex);
             }
 
