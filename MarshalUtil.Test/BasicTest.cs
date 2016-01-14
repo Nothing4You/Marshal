@@ -29,6 +29,16 @@ namespace MarshalUtil.Test
         }
 
         [Fact]
+        public void StringTableDecode()
+        {
+            object value = new MarshalStream(@"~\x00\x00\x00\x00\x11\x5a").GetValue();
+
+            Assert.NotNull(value);
+            Assert.True(value is string);
+            Assert.Equal(ProtocolConstants.StringTable[0x5a], (string)value);
+        }
+
+        [Fact]
         public void WrongInputLength()
         {
             MarshalStream ms = new MarshalStream(@"~\x00\x00\x00\x00\x25");
