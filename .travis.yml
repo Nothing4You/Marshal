@@ -1,8 +1,0 @@
-language: csharp
-solution: MarshalUtil.sln
-mono:
-- latest
-- 4.2.1 # ubuntu xenial
-script:
-- xbuild /p:Configuration=Release MarshalUtil.sln
-- mono ./packages/xunit.runner.console.*/tools/xunit.console.exe ./MarshalUtil.Test/bin/Release/MarshalUtil.Test.dll
